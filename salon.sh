@@ -6,8 +6,8 @@ SERVICES=$($PSQL "SELECT service_id,name FROM services")
 NUM_SERVICES=$($PSQL "SELECT COUNT(*) FROM services")
 
 # CAUTION: Non-capturing groups, e.g. (?: ... ), not supported!
-PHONE_REGEX='^(\([0-9]{3}\)|[0-9]{3})?(\-|[[:space:]])?[0-9]{3}(\-|[[:space:]])?[0-9]{4}$'
-TIME_REGEX='^[0-2]?[0-9]:?([0-5][0-9])?([[:space:]]?[AaPp][Mm])?$'
+PHONE_REGEX='^(\([0-9]{3}\)|[0-9]{3})?(\-|[:space:])?[0-9]{3}(\-|[:space:])?[0-9]{4}$'
+TIME_REGEX='^[0-2]?[0-9]:?([0-5][0-9])?([:space:]?[AaPp][Mm])?$'
 DEFAULT_IFS=$IFS
 
 MAIN_MENU() {
